@@ -36,7 +36,7 @@ float Object::getY() const {
   return position.y;
 }
 
-bool Object::colliding(Object* a, Object* b) {
+bool Object::colliding(const Object* a, const Object* b) {
   return !(
     a->getX() + a->width < b->getX() || //left
     a->getY() + a->height < b->getY() || //top

@@ -19,7 +19,7 @@ public:
 
     void draw();
 
-    static bool colliding(Object* a, Object* b);
+    static bool colliding(const Object* a, const Object* b);
 
 protected:
   sf::Vector2<float> position;

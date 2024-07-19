@@ -4,6 +4,7 @@
 #include "Platform.h"
 #include <chrono>
 #include <vector>
+#include <iostream>
 
 Object* createPlatform(float x, float y, float width, float height)
 {
@@ -55,6 +56,11 @@ int main()
     for (auto object : objects)
     {
       object->draw();
+    }
+
+    if(Object::colliding(square, platform))
+    {
+      std::cout << "colliding!" << std::endl;
     }
 
     window.display();
