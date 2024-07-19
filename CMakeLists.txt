@@ -14,8 +14,6 @@ add_executable(platformer source/main.cpp
     source/constants.h
     source/Object.cpp
     source/Object.h
-    source/Colliding.cpp
-    source/Colliding.h
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC

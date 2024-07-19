@@ -2,10 +2,8 @@
 #include "Square.h"
 #include "constants.h"
 #include "Platform.h"
-#include "Colliding.h"
 #include <chrono>
 #include <vector>
-#include <iostream>
 
 Object* createPlatform(float x, float y, float width, float height)
 {
