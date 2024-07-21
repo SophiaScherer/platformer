@@ -2,7 +2,7 @@
 #define PLATFORMER_OBJECT_H
 
 #include <SFML/Graphics.hpp>
-//#include "Square.h"
+//#include "Player.h"
 
 class Object {
 public:

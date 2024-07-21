@@ -7,8 +7,8 @@ file(COPY "external/lib/" DESTINATION "bin/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_executable(platformer source/main.cpp
-    source/Square.h
-    source/Square.cpp
+    source/Player.h
+    source/Player.cpp
     source/Platform.h
     source/Platform.cpp
     source/constants.h

@@ -1,5 +1,5 @@
 #include "Object.h"
-#include "Square.h"
+#include "Player.h"
 
 Object::Object(sf::Vector2<float> position)
   : position(position), width(80), height(80), m_window(nullptr)
@@ -75,7 +75,7 @@ sf::Vector2<float> Object::getMtv(const Object *a, const Object *b) {
   return mtv;
 }
 
-//todo: move resolveCollisions to Square.cpp
+//todo: move resolveCollisions to Player.cpp
 
 void Object::resolveCollisions(const Object *a, const Object *b) {
   if (colliding(a, b)) {

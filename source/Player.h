@@ -1,11 +1,11 @@
-#ifndef PLATFORMER_SQUARE_H
-#define PLATFORMER_SQUARE_H
+#ifndef PLATFORMER_PLAYER_H
+#define PLATFORMER_PLAYER_H
 
 #include "Object.h"
 
-class Square : public Object {
+class Player : public Object {
 public:
-  explicit Square(sf::Vector2<float> position);
+  explicit Player(sf::Vector2<float> position);
 
   float getXvel();
   float getYvel();
@@ -27,4 +27,4 @@ protected:
 };
 
 
-#endif //PLATFORMER_SQUARE_H
+#endif //PLATFORMER_PLAYER_H

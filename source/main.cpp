@@ -1,5 +1,5 @@
 #include "SFML/Graphics.hpp"
-#include "Square.h"
+#include "Player.h"
 #include "constants.h"
 #include "Platform.h"
 #include <chrono>
@@ -18,7 +18,7 @@ int main()
 
   std::vector<Object*> objects;
 
-  Object* square = new Square({0, 0});
+  Object* square = new Player({0, 0});
   objects.push_back(square);
 
   Object* platform = createPlatform(50, 500, 150, 50);

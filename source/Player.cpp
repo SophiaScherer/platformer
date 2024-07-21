@@ -1,21 +1,21 @@
-#include "Square.h"
+#include "Player.h"
 #include "constants.h"
 
 const float FRICTION = 0.95f;
 
-Square::Square(sf::Vector2<float> position)
+Player::Player(sf::Vector2<float> position)
   : Object(position), velocity(0, 0)
 {}
 
-float Square::getXvel() {
+float Player::getXvel() {
   return velocity.x;
 }
 
-float Square::getYvel() {
+float Player::getYvel() {
   return velocity.y;
 }
 
-void Square::update()
+void Player::update()
 {
   move();
 
@@ -30,12 +30,12 @@ void Square::update()
   wallCollisions();
 }
 
-void Square::applyForce(sf::Vector2<float> force)
+void Player::applyForce(sf::Vector2<float> force)
 {
   velocity += force * PHYSICS_DT;
 }
 
-void Square::move()
+void Player::move()
 {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
   {
@@ -53,7 +53,7 @@ void Square::move()
   }
 }
 
-void Square::wallCollisions()
+void Player::wallCollisions()
 {
   if (position.x < 0)
   {
