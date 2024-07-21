@@ -83,28 +83,25 @@ void Player::resolveCollisions(const Object *a, const Object *b) {
   if (colliding(a, b)) {
     sf::Vector2<float> mtv = getMtv(a, b);
 
-    float xVel = getXvel();
-    float yVel = getYvel();
-
     position.x += mtv.x;
     position.y += mtv.y;
 
-    if ( mtv.y > 0) {
-      yVel = 0;
+    if (mtv.y > 0) {
+      velocity.y = 0;
     }
 
     if (mtv.y < 0) {
       falling = false;
-      yVel = 0;
+      velocity.y = 0;
 
     }
 
     if (mtv.x > 0) {
-      xVel = 0;
+      velocity.x = 0;
     }
 
     if (mtv.x < 0) {
-      xVel = 0;
+      velocity.x = 0;
     }
   }
 }
