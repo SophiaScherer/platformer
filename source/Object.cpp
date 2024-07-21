@@ -1,5 +1,4 @@
 #include "Object.h"
-#include "Player.h"
 
 Object::Object(sf::Vector2<float> position)
   : position(position), width(80), height(80), m_window(nullptr)
@@ -43,28 +42,28 @@ sf::Vector2<float> Object::getMtv(const Object *a, const Object *b) {
   float minDist = 100000000.0f;
 
   float distance = (a->getX() + a->width) - b->getX();
-  if (abs(distance) < minDist) {
-    minDist = abs(distance);
+  if (std::abs(distance) < minDist) {
+    minDist = std::abs(distance);
     mtv.x = distance;
     mtv.y = 0;
   }
 
   distance = (a->getY() + a->height) - b->getY();
-  if (abs(distance) < minDist) {
-    minDist = abs(distance);
+  if (std::abs(distance) < minDist) {
+    minDist = std::abs(distance);
     mtv.x = 0;
     mtv.y = distance;
   }
 
   distance = a->getX() - (b->getX() + b->width);
-  if (abs(distance) < minDist) {
-    minDist = abs(distance);
+  if (std::abs(distance) < minDist) {
+    minDist = std::abs(distance);
     mtv.x = distance;
     mtv.y = 0;
   }
 
   distance = a->getY() - (b->getY() + b->height);
-  if (abs(distance) < minDist) {
+  if (std::abs(distance) < minDist) {
     mtv.x = 0;
     mtv.y = distance;
   }
