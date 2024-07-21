@@ -7,6 +7,9 @@ class Square : public Object {
 public:
   explicit Square(sf::Vector2<float> position);
 
+    [[maybe_unused]] static float getXvel();
+  float getYvel();
+
   void update() override;
 
   void applyForce(sf::Vector2<float> force);
@@ -14,8 +17,6 @@ public:
   void move();
 
   void wallCollisions();
-
-  bool colliding(Object* a, Object* b);
 
 private:
   sf::Vector2<float> velocity;

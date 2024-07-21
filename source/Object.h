@@ -2,6 +2,7 @@
 #define PLATFORMER_OBJECT_H
 
 #include <SFML/Graphics.hpp>
+//#include "Square.h"
 
 class Object {
 public:
@@ -10,9 +11,6 @@ public:
     [[nodiscard]] float getX() const;
     [[nodiscard]] float getY() const;
 
-    [[nodiscard]] float getWidth() const;
-    [[nodiscard]] float getHeight() const;
-
     virtual void update();
 
     void bindWindow(sf::RenderWindow* window);
@@ -20,6 +18,10 @@ public:
     void draw();
 
     static bool colliding(const Object* a, const Object* b);
+
+    static sf::Vector2<float> getMtv(const Object* a, const Object* b);
+
+    void resolveCollisions(const Object* a, const Object* b);
 
 protected:
   sf::Vector2<float> position;

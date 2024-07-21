@@ -7,6 +7,14 @@ Square::Square(sf::Vector2<float> position)
   : Object(position), velocity(0, 0)
 {}
 
+[[maybe_unused]] float Square::getXvel() {
+  return velocity.x;
+}
+
+float Square::getYvel() {
+  return velocity.y;
+}
+
 void Square::update()
 {
   move();
@@ -71,12 +79,4 @@ void Square::wallCollisions()
     velocity.y = 0;
     falling = false;
   }
-}
-
-bool Square::colliding(Object *a, Object *b) {
-  return 
-      a->getX() + a->getWidth() < b->getX() || //left
-      a->getY() + a->getHeight() < b->getY() || //top
-      a->getX() > b->getX() + b->getWidth() || //right
-      a->getY() > b->getY() + b->getHeight(); //bottom
 }

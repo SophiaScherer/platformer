@@ -37,7 +37,7 @@ int main()
     sf::Event event{};
 
     while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed)
+      if (event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
         window.close();
     }
 
@@ -60,7 +60,8 @@ int main()
 
     if(Object::colliding(square, platform))
     {
-      std::cout << "colliding!" << std::endl;
+      sf::Vector2<float> mtv = Object::getMtv(square, platform);
+      std::cout << "MTV: x: " << mtv.x << " Y: " << mtv.y << std::endl;
     }
 
     window.display();
