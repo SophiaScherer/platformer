@@ -21,10 +21,9 @@ public:
 
     static sf::Vector2<float> getMtv(const Object* a, const Object* b);
 
-    void resolveCollisions(const Object* a, const Object* b);
-
 protected:
   sf::Vector2<float> position;
+  sf::Vector2<float> velocity;
 
   float width;
   float height;

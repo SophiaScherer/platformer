@@ -7,8 +7,8 @@ class Player : public Object {
 public:
   explicit Player(sf::Vector2<float> position);
 
-  float getXvel();
-  float getYvel();
+  [[nodiscard]] float getXvel() const;
+  [[nodiscard]] float getYvel() const;
 
   void update() override;
 
@@ -18,7 +18,9 @@ public:
 
   void wallCollisions();
 
-protected:
+  static void resolveCollisions(const Object *a, const Object *b);
+
+private:
   sf::Vector2<float> velocity;
 
   float speed = 10.25;

@@ -58,11 +58,7 @@ int main()
       object->draw();
     }
 
-    if(Object::colliding(square, platform))
-    {
-      sf::Vector2<float> mtv = Object::getMtv(square, platform);
-      std::cout << "MTV: x: " << mtv.x << " Y: " << mtv.y << std::endl;
-    }
+    Player::resolveCollisions(square, platform);
 
     window.display();
 

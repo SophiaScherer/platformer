@@ -7,11 +7,11 @@ Player::Player(sf::Vector2<float> position)
   : Object(position), velocity(0, 0)
 {}
 
-float Player::getXvel() {
+float Player::getXvel() const {
   return velocity.x;
 }
 
-float Player::getYvel() {
+float Player::getYvel() const {
   return velocity.y;
 }
 
@@ -25,14 +25,11 @@ void Player::update()
 
   applyForce(GRAVITY);
 
-  position += velocity;
-
   wallCollisions();
 }
 
 void Player::applyForce(sf::Vector2<float> force)
 {
-  velocity += force * PHYSICS_DT;
 }
 
 void Player::move()
@@ -78,5 +75,35 @@ void Player::wallCollisions()
     position.y = WINDOW_HEIGHT - height;
     velocity.y = 0;
     falling = false;
+  }
+}
+
+void Player::resolveCollisions(const Object *a, const Object *b) {
+  if (colliding(a, b)) {
+    sf::Vector2<float> mtv = getMtv(a, b);
+
+    float xVel = a->getXvel();
+    float yVel = a->getYvel();
+
+    position.x += mtv.x;
+    position.y += mtv.y;
+
+    if ( mtv.y > 0) {
+      yVel = 0;
+    }
+
+    if (mtv.y < 0) {
+      falling = false;
+      yVel = 0;
+
+    }
+
+    if (mtv.x > 0) {
+      xVel = 0;
+    }
+
+    if (mtv.x < 0) {
+      xVel = 0;
+    }
   }
 }

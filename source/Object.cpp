@@ -2,7 +2,7 @@
 #include "Player.h"
 
 Object::Object(sf::Vector2<float> position)
-  : position(position), width(80), height(80), m_window(nullptr)
+  : position(position), velocity(0, 0), width(80), height(80), m_window(nullptr)
 {}
 
 void Object::update()
@@ -73,32 +73,4 @@ sf::Vector2<float> Object::getMtv(const Object *a, const Object *b) {
   mtv.y *= -1;
 
   return mtv;
-}
-
-//todo: move resolveCollisions to Player.cpp
-
-void Object::resolveCollisions(const Object *a, const Object *b) {
-  if (colliding(a, b)) {
-    sf::Vector2<float> mtv = getMtv(a, b);
-
-    a->position.x += mtv.x;
-    a->position.y += mtv.y;
-
-    if ( mtv.y > 0) {
-      a->getYvel();
-    }
-
-    if (mtv.y < 0) {
-      a.falling = false;
-      a.yVel = 0;
-    }
-
-    if (mtv.x > 0) {
-      a.xVel = 0;
-    }
-
-    if (mtv.x < 0) {
-      a.xVel = 0;
-    }
-  }
 }
