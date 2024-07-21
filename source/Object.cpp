@@ -75,7 +75,7 @@ sf::Vector2<float> Object::getMtv(const Object *a, const Object *b) {
   return mtv;
 }
 
-float test = Square::getXvel();
+//todo: move resolveCollisions to Square.cpp
 
 void Object::resolveCollisions(const Object *a, const Object *b) {
   if (colliding(a, b)) {
@@ -85,7 +85,7 @@ void Object::resolveCollisions(const Object *a, const Object *b) {
     a->position.y += mtv.y;
 
     if ( mtv.y > 0) {
-      a.Square::a.getXvel() = 0;
+      a->getYvel();
     }
 
     if (mtv.y < 0) {

@@ -7,7 +7,7 @@ class Square : public Object {
 public:
   explicit Square(sf::Vector2<float> position);
 
-    [[maybe_unused]] static float getXvel();
+  float getXvel();
   float getYvel();
 
   void update() override;
@@ -18,7 +18,7 @@ public:
 
   void wallCollisions();
 
-private:
+protected:
   sf::Vector2<float> velocity;
 
   float speed = 10.25;

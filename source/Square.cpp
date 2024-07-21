@@ -7,7 +7,7 @@ Square::Square(sf::Vector2<float> position)
   : Object(position), velocity(0, 0)
 {}
 
-[[maybe_unused]] float Square::getXvel() {
+float Square::getXvel() {
   return velocity.x;
 }
 
