@@ -18,7 +18,7 @@ public:
 
   void wallCollisions();
 
-  static void resolveCollisions(const Object *a, const Object *b);
+  void resolveCollisions(const Object *a, const Object *b);
 
 private:
   sf::Vector2<float> velocity;

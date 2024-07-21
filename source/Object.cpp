@@ -2,7 +2,7 @@
 #include "Player.h"
 
 Object::Object(sf::Vector2<float> position)
-  : position(position), velocity(0, 0), width(80), height(80), m_window(nullptr)
+  : position(position), width(80), height(80), m_window(nullptr)
 {}
 
 void Object::update()

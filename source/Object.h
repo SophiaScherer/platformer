@@ -2,7 +2,6 @@
 #define PLATFORMER_OBJECT_H
 
 #include <SFML/Graphics.hpp>
-//#include "Player.h"
 
 class Object {
 public:
@@ -23,7 +22,6 @@ public:
 
 protected:
   sf::Vector2<float> position;
-  sf::Vector2<float> velocity;
 
   float width;
   float height;

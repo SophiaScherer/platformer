@@ -30,6 +30,7 @@ void Player::update()
 
 void Player::applyForce(sf::Vector2<float> force)
 {
+  velocity += force * PHYSICS_DT;
 }
 
 void Player::move()
@@ -82,8 +83,8 @@ void Player::resolveCollisions(const Object *a, const Object *b) {
   if (colliding(a, b)) {
     sf::Vector2<float> mtv = getMtv(a, b);
 
-    float xVel = a->getXvel();
-    float yVel = a->getYvel();
+    float xVel = getXvel();
+    float yVel = getYvel();
 
     position.x += mtv.x;
     position.y += mtv.y;
