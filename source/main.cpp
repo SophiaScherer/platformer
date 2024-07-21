@@ -58,7 +58,10 @@ int main()
       object->draw();
     }
 
-    Player::resolveCollisions(square, platform);
+    auto* player = dynamic_cast<Player*>(square);
+    if (player) {
+      player->resolveCollisions(square, platform);
+    }
 
     window.display();
 

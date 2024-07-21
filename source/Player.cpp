@@ -7,14 +7,6 @@ Player::Player(sf::Vector2<float> position)
   : Object(position), velocity(0, 0)
 {}
 
-float Player::getXvel() const {
-  return velocity.x;
-}
-
-float Player::getYvel() const {
-  return velocity.y;
-}
-
 void Player::update()
 {
   move();
@@ -49,6 +41,8 @@ void Player::move()
   {
     applyForce({0, -height * 5});
   }
+
+  position += velocity;
 }
 
 void Player::wallCollisions()
@@ -93,7 +87,6 @@ void Player::resolveCollisions(const Object *a, const Object *b) {
     if (mtv.y < 0) {
       falling = false;
       velocity.y = 0;
-
     }
 
     if (mtv.x > 0) {

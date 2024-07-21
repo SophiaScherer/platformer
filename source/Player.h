@@ -7,9 +7,6 @@ class Player : public Object {
 public:
   explicit Player(sf::Vector2<float> position);
 
-  [[nodiscard]] float getXvel() const;
-  [[nodiscard]] float getYvel() const;
-
   void update() override;
 
   void applyForce(sf::Vector2<float> force);
