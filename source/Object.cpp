@@ -40,9 +40,9 @@ bool Object::colliding(const Object* a, const Object* b) {
 
 sf::Vector2<float> Object::getMtv(const Object *a, const Object *b) {
   sf::Vector2<float> mtv(0, 0);
-  float minDist = 100000000.;
+  float minDist = 100000000.0f;
 
-  float distance = (a->getX() + a->width) - b->getY();
+  float distance = (a->getX() + a->width) - b->getX();
   if (abs(distance) < minDist) {
     minDist = abs(distance);
     mtv.x = distance;

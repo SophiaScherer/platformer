@@ -4,7 +4,6 @@
 #include "Platform.h"
 #include <chrono>
 #include <vector>
-#include <iostream>
 
 Object* createPlatform(float x, float y, float width, float height)
 {
@@ -21,7 +20,7 @@ int main()
   Object* square = new Player({0, 0});
   objects.push_back(square);
 
-  Object* platform = createPlatform(50, 500, 150, 50);
+  Object* platform = createPlatform(325, 450, 150, 50);
   objects.push_back(platform);
 
   for (auto object : objects)
