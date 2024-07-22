@@ -9,8 +9,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_executable(platformer source/main.cpp
     source/Player.h
     source/Player.cpp
-    source/Platform.h
-    source/Platform.cpp
     source/constants.h
     source/Object.cpp
     source/Object.h

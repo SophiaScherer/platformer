@@ -1,13 +1,12 @@
 #include "SFML/Graphics.hpp"
 #include "Player.h"
 #include "constants.h"
-#include "Platform.h"
 #include <chrono>
 #include <vector>
 
 Object* createPlatform(float x, float y, float width, float height)
 {
-  Object* platform = new Platform({x, y}, {width, height}, {200, 64, 180});
+  Object* platform = new Object({x, y}, {width, height}, {200, 64, 180});
   return platform;
 }
 
@@ -17,10 +16,11 @@ int main()
 
   std::vector<Object*> objects;
 
-  Object* square = new Player({0, 0});
+  Object* square = new Player({0, 0}, {50, 50}, {100, 250, 50});
   objects.push_back(square);
 
   Object* platform = createPlatform(325, 450, 150, 50);
+
   objects.push_back(platform);
 
   for (auto object : objects)

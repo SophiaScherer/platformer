@@ -1,8 +1,13 @@
 #include "Object.h"
 
-Object::Object(sf::Vector2<float> position)
-  : position(position), width(80), height(80), m_window(nullptr)
-{}
+Object::Object(sf::Vector2<float> position, sf::Vector2<float> size, sf::Color color)
+  : position(position), m_window(nullptr)
+{
+  this->fillColor = color;
+
+  this->width = size.x;
+  this->height = size.y;
+}
 
 void Object::update()
 {}

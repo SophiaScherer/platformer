@@ -5,7 +5,7 @@
 
 class Object {
 public:
-    explicit Object(sf::Vector2<float> position);
+    explicit Object(sf::Vector2<float> position, sf::Vector2<float> size, sf::Color color);
 
     [[nodiscard]] float getX() const;
     [[nodiscard]] float getY() const;
@@ -28,7 +28,8 @@ protected:
 
   sf::RenderWindow* m_window;
 
-  sf::Color fillColor = sf::Color(100, 250, 50);
+//  sf::Color fillColor = sf::Color(100, 250, 50);
+  sf::Color fillColor;
 };
 
 

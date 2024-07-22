@@ -5,7 +5,7 @@
 
 class Player : public Object {
 public:
-  explicit Player(sf::Vector2<float> position);
+  explicit Player(sf::Vector2<float> position, sf::Vector2<float> size, sf::Color color);
 
   void update() override;
 

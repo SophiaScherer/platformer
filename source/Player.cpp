@@ -3,9 +3,14 @@
 
 const float FRICTION = 0.95f;
 
-Player::Player(sf::Vector2<float> position)
-  : Object(position), velocity(0, 0)
-{}
+Player::Player(sf::Vector2<float> position, sf::Vector2<float> size, sf::Color color)
+  : Object(position, size, color), velocity(0, 0)
+{
+  this->fillColor = color;
+
+  this->width = size.x;
+  this->height = size.y;
+}
 
 void Player::update()
 {
